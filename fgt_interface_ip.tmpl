@@ -1,0 +1,12 @@
+Value Port (\w+)
+Value Vdom (\w+)
+Value IP_ADDRESS (\d+\.\d+\.\d+\.\d+\s\d+\.\d+\.\d+\.\d+)
+Value NET_MASK (\d+\.\d+\.\d+\.\d+)
+
+Start
+  ^.*config system interface.
+  ^.*edit\s"${Port}"
+  ^.*set vdom\s"${Vdom}".
+  ^.*set.*ip\s+${IP_ADDRESS} -> Record
+
+
