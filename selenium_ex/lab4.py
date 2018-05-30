@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
-host = "https://223.27.243.98"
+host = "https://192.168.2.245"
 
 # Optional argument, if not specified will search path.
 options = webdriver.ChromeOptions()
@@ -20,10 +20,10 @@ browser.get('%s/login' % host)
 
 
 username = browser.find_element_by_name('username')
-username.send_keys('itgreen')
+username.send_keys('admin')
 
 password = browser.find_element_by_name('secretkey')
-password.send_keys('ITG@1234')
+password.send_keys('1234')
 browser.find_element_by_name("login_button").click()
 
 

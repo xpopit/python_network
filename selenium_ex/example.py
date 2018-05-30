@@ -6,7 +6,7 @@ import mechanicalsoup
 #from getpass import getpass
 
 #parser = argparse.ArgumentParser(description="Login to GitHub.")
-#parser.add_argument("username")
+# parser.add_argument("username")
 #args = parser.parse_args()
 
 #args.password = getpass("Please enter your GitHub password: ")
@@ -19,8 +19,8 @@ browser = mechanicalsoup.StatefulBrowser(
 # Uncomment for a more verbose output:
 # browser.set_verbose(2)
 
-#browser.open("https://github.com")
-browser.open("https://110.49.11.34/login")
+# browser.open("https://github.com")
+browser.open("https://192.168.2.245/login")
 browser.select_form('#login form')
 browser["login"] = ""
 browser["password"] = ""

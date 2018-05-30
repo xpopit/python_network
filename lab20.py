@@ -3,9 +3,9 @@ import paramiko
 import time
 import csv
 
-ip = '223.27.243.98'
-user = 'itgreen'
-passwd = 'ITG@1234'
+ip = '1'
+user = 'admin'
+passwd = '1234'
 
 session = paramiko.SSHClient()  # Open the session
 session.set_missing_host_key_policy(paramiko.AutoAddPolicy())

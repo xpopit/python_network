@@ -1,10 +1,10 @@
 import mechanicalsoup
 
 browser = mechanicalsoup.StatefulBrowser()
-browser.open("https://110.49.11.34/login",verify=False)
+browser.open("https://192.168.2.245/login", verify=False)
 
 print(browser.get_url())
-#browser.follow_link("forms")
+# browser.follow_link("forms")
 print(browser.get_url())
 print(browser.get_current_page())
 
@@ -24,4 +24,4 @@ print(browser.get_current_page())
 # browser.get_current_form().print_summary()
 
 #response = browser.submit_selected()
-#print(response.text)
+# print(response.text)
