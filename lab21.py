@@ -1,19 +1,20 @@
-#!/usr/local/bin/python3.6
-from robobrowser import RoboBrowser
+from selenium import webdriver
 
-browser = RoboBrowser()
-browser.open('http://192.168.2.245/login')
+driver = webdriver.Firefox()
+driver.get('http://web.whatsapp.com')
 
-# Get the signup form
-signup_form = browser.get_form()
-print(signup_form)         # <RoboForm user[name]=, user[email]=, ...
+name = input('Enter the name of user or group : ')
+msg = input('Enter the message : ')
+count = int(input('Enter the count : '))
 
-# Inspect its values
-# signup_form['authenticity_token'].value     # 6d03597 ...
+#Scan the code before proceeding further
+input('Enter anything after scanning QR code')
 
-# Fill it out
-signup_form['user[username]'].value = 'admin'
-signup_form['user[secretkey]'].value = '1234'
+user = driver.find_element_by_xpath('//span[@title = "{}"]'.format(name))
+user.click()
 
-# Submit the form
-browser.submit_form(signup_form)
+msg_box = driver.find_element_by_class_name('input-container')
+
+for i in range(count):
+    msg_box.send_keys(msg)
+    driver.find_element_by_class_name('compose-btn-send').click()
